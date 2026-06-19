@@ -248,4 +248,4 @@ Through this project, the following concepts were implemented:
 
 ## 📄 License
 
-This project is developed for educational and portfolio purposes.
+This project is licensed under the MIT License.
