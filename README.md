@@ -1,51 +1,251 @@
 # AI Resume Analyzer
 
-Full-stack MERN-style project that evaluates resumes against job descriptions. It supports authentication, PDF/DOCX upload, resume parsing, ATS scoring, skill gap analysis, candidate history, admin statistics, and downloadable reports.
+## 📌 Project Overview
 
-## Tech Stack
+AI Resume Analyzer is a full-stack web application that leverages Artificial Intelligence to analyze resumes against job descriptions, calculate ATS (Applicant Tracking System) compatibility scores, identify missing skills, and provide personalized recommendations to improve a candidate's chances of getting shortlisted.
 
-- Frontend: React, Vite, Tailwind CSS, React Router, Axios, Recharts, React Icons
-- Backend: Node.js, Express, JWT, Multer, PDF/DOCX parsing, optional MongoDB/Mongoose
-- AI: deterministic local analyzer by default, optional OpenAI-compatible hook via `OPENAI_API_KEY`
+The platform helps job seekers optimize their resumes while assisting recruiters in evaluating candidate profiles more efficiently.
 
-## Quick Start
+---
+
+## 🚀 Features
+
+### Authentication & Authorization
+
+* User Registration and Login
+* JWT-Based Authentication
+* Secure Protected Routes
+
+### Resume Management
+
+* Upload Resume (PDF/DOCX)
+* Resume Parsing and Information Extraction
+* Resume Preview
+
+### AI-Powered Analysis
+
+* ATS Score Calculation
+* Resume-to-Job Description Matching
+* Skill Gap Analysis
+* Keyword Optimization Suggestions
+* Personalized Resume Feedback
+
+### Analytics Dashboard
+
+* ATS Score Visualization
+* Analysis History
+* Resume Performance Tracking
+* Skill Distribution Insights
+
+### Reports
+
+* Detailed Analysis Reports
+* Downloadable PDF Reports
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+* React.js
+* Tailwind CSS
+* React Router DOM
+* Axios
+* Recharts
+* React Icons
+
+### Backend
+
+* Node.js
+* Express.js
+* JWT Authentication
+* Multer
+* bcrypt.js
+
+### Database
+
+* MongoDB Atlas
+* Mongoose
+
+### AI & Resume Processing
+
+* Google Gemini API / OpenAI API
+* PDF-Parse
+* Mammoth.js
+* Natural Language Processing (NLP)
+
+### Deployment
+
+* Vercel (Frontend)
+* Render / Railway / Fly.io (Backend)
+* MongoDB Atlas (Database)
+
+---
+
+## 📂 Project Structure
 
 ```bash
-npm run install:all
-npm run dev
+AI-Resume-Analyzer
+│
+├── frontend
+│   ├── src
+│   │   ├── components
+│   │   ├── pages
+│   │   ├── layouts
+│   │   ├── services
+│   │   ├── context
+│   │   ├── hooks
+│   │   ├── utils
+│   │   └── App.jsx
+│   │
+│   └── package.json
+│
+├── backend
+│   ├── controllers
+│   ├── models
+│   ├── routes
+│   ├── middleware
+│   ├── services
+│   ├── config
+│   ├── uploads
+│   └── server.js
+│
+└── README.md
 ```
 
-Frontend: http://localhost:5173  
-Backend: http://localhost:5000
+---
 
-The app runs without MongoDB by using in-memory storage. Add `MONGO_URI` in `backend/.env` for persistent MongoDB Atlas storage.
+## ⚙️ Installation
 
-## Demo Accounts
+### Backend Setup
 
-When running without MongoDB, register any user from the UI. To create an admin, register with the role set to `admin` through the API or update the role in MongoDB.
+```bash
+cd backend
 
-## Environment
+npm install
+```
 
-Copy `backend/.env.example` to `backend/.env`.
+Create a `.env` file:
 
 ```env
 PORT=5000
-CLIENT_URL=http://localhost:5173
-JWT_SECRET=change-this-secret
-MONGO_URI=
-OPENAI_API_KEY=
-OPENAI_MODEL=gpt-4o-mini
+
+MONGODB_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_jwt_secret
+
+GEMINI_API_KEY=your_gemini_api_key
 ```
 
-## Core Features
+Start Backend:
 
-- Candidate registration and login
-- Protected routes with role-based admin pages
-- Drag and drop resume upload
-- PDF and DOCX text extraction
-- Job description paste input
-- ATS score breakdown: keyword, skills, experience, formatting
-- Matched skills, missing skills, strengths, weaknesses, and suggestions
-- Candidate analysis history
-- Admin user/report statistics
-- Printable/downloadable analysis report
+```bash
+npm run dev
+```
+
+---
+
+### Frontend Setup
+
+```bash
+cd frontend
+
+npm install
+```
+
+
+Start Frontend:
+
+```bash
+npm run dev
+```
+
+---
+
+## 📊 Workflow
+
+1. User uploads a resume.
+2. System extracts resume content.
+3. User enters a job description.
+4. AI analyzes resume against requirements.
+5. ATS score is generated.
+6. Missing skills are identified.
+7. AI provides strengths, weaknesses, and recommendations.
+8. Results are displayed on the dashboard.
+9. User can download the analysis report.
+
+---
+
+## 📡 API Endpoints
+
+### Authentication
+
+```http
+POST /api/auth/register
+
+POST /api/auth/login
+
+GET /api/auth/profile
+```
+
+### Resume
+
+```http
+POST /api/resume/upload
+
+GET /api/resume/all
+
+GET /api/resume/:id
+```
+
+### Analysis
+
+```http
+POST /api/analyze
+
+GET /api/analyze/history
+
+GET /api/analyze/:id
+```
+
+---
+
+## 📈 Future Enhancements
+
+* AI Resume Builder
+* Cover Letter Generator
+* Interview Question Generator
+* Resume Ranking System
+* Multiple Job Description Comparison
+* Recruiter Dashboard
+* Career Recommendation Engine
+
+---
+
+## 🎯 Learning Outcomes
+
+Through this project, the following concepts were implemented:
+
+* Full Stack MERN Development
+* REST API Development
+* Authentication & Authorization
+* File Upload Handling
+* Resume Parsing
+* AI Integration
+* ATS Scoring Logic
+* MongoDB Database Management
+* Dashboard Analytics
+* Cloud Deployment
+
+---
+
+## 👨‍💻 Author
+
+**Dev Patel**
+
+---
+
+## 📄 License
+
+This project is developed for educational and portfolio purposes.
