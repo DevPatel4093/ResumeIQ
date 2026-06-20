@@ -66,20 +66,13 @@ The platform helps job seekers optimize their resumes while assisting recruiters
 ### Database
 
 * MongoDB Atlas
-* Mongoose
-
+  
 ### AI & Resume Processing
 
 * Google Gemini API / OpenAI API
 * PDF-Parse
 * Mammoth.js
 * Natural Language Processing (NLP)
-
-### Deployment
-
-* Vercel (Frontend)
-* Render / Railway / Fly.io (Backend)
-* MongoDB Atlas (Database)
 
 ---
 
